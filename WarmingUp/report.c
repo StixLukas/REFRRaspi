@@ -22,6 +22,11 @@ bool reportReport(){
     int anzGET = 0;
     int anzPOST = 0;
     int anzPhone = 0;
+    int anzMozilla = 0;
+    int anzApache = 0;
+    int anzChrome = 0;
+    int anzSafari = 0;
+    char delim[] = " ";
 
 
     while ((read = getline(&line, &len, file)) != -1) {
@@ -35,10 +40,17 @@ bool reportReport(){
             anzPhone++;
         else if(strstr(line,"iPhone"))
             anzPhone++;
-
+        if(strstr(line,"Mozilla"))
+            anzMozilla++;
+        if ((strstr(line,"Chrome")))
+            anzChrome++;
+        if (strstr(line,"Safari"))
+            anzSafari++;
+        if (strstr(line,"Apache"))
+            anzApache++;
         //printf("%s", line);
     }
-    printf("\nZeilen: %d\nGETS: %d\nPOSTS: %d\nSmartphone: %d",zeilen,anzGET,anzPOST,anzPhone);
+    printf("\nZeilen: %d\nGETS: %d\nPOSTS: %d\nSmartphone: %d\nMozilla: %d\nChrome: %d\nSafari: %d\nApache: %d",zeilen,anzGET,anzPOST,anzPhone,anzMozilla,anzChrome,anzSafari,anzApache);
 
     return true;
 
