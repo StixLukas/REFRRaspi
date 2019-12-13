@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 #define IN  0
 #define OUT 1
@@ -25,9 +26,9 @@
 #define GREEN 0
 
 void verkabeltesPiBlink(char[],int);
-static int GPIOExport(int pin);
-static int GPIOUnexport(int pin);
-static int GPIODirection(int pin, int dir);
-static int GPIORead(int pin);
-static int GPIOWrite(int pin, int value);
+int GPIOExport(int);
+int GPIOUnexport(int);
+int GPIODirection(int, int);
+int GPIORead(int);
+int GPIOWrite(int, int);
 #endif //GPIO_G3UEBUNG_FUNCTIONS_H
